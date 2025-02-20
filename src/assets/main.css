@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'marker';
+    src: url('123marker.ttf');
+}
+
+* {
+    font-family: marker;
+}
+
+body {
+    background: linear-gradient(135deg, #153677, #4e085f);
+}
