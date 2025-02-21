@@ -57,9 +57,6 @@ const deleteTask = (index) => {
                 <li v-for="(task, index) in tasks" :key="task" class="flex justify-between p-2 rounded-lg w-full">
                 <!-- TODO: add Less/ More logic -->
                 <span class="text-3xl w-87 break-words">
-                    <label>
-                        <input type="checkbox" checked="checked">
-                    </label>
                     <div v-if="task.length<20">{{index+1}}.{{ task }}</div>
                     <div v-else>
                         {{ index+1 }}.{{truncatedDescription(index+1)}}
@@ -67,7 +64,10 @@ const deleteTask = (index) => {
                         <!-- TODO: add toggle logic -->
                     </div>
                 </span>
-                <button @click="deleteTask(index)" class="text-red-500 text-3xl cursor-pointer duration-300 ease-out hover:text-red-700">X</button>
+                    <div class="flex items-center gap-2.5">
+                        <input type="checkbox" class="h-6 w-6"s>
+                        <button @click="deleteTask(index)" class="text-red-500 text-3xl cursor-pointer duration-300 ease-out hover:text-red-700">X</button>
+                    </div>
                 </li>
             </ul>
         </div>
