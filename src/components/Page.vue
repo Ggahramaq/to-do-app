@@ -57,6 +57,9 @@ const deleteTask = (index) => {
                 <li v-for="(task, index) in tasks" :key="task" class="flex justify-between p-2 rounded-lg w-full">
                 <!-- TODO: add Less/ More logic -->
                 <span class="text-3xl w-87 break-words">
+                    <label>
+                        <input type="checkbox" checked="checked">
+                    </label>
                     <div v-if="task.length<20">{{index+1}}.{{ task }}</div>
                     <div v-else>
                         {{ index+1 }}.{{truncatedDescription(index+1)}}
