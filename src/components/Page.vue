@@ -55,13 +55,11 @@ const deleteTask = (index) => {
         <div class="w-full mt-4 flex-grow overflow-y-auto max-h-[250px]">
             <ul class="w-full mt-4 flex flex-col gap-2">
                 <li v-for="(task, index) in tasks" :key="task" class="flex justify-between p-2 rounded-lg w-full">
-                <!-- TODO: add Less/ More logic -->
                 <span class="text-3xl w-87 break-words">
                     <div v-if="task.length<20">{{index+1}}.{{ task }}</div>
                     <div v-else>
                         {{ index+1 }}.{{truncatedDescription(index+1)}}
                         <button @click="toggleTruncation(index+1)" class="text-green-500 transition duration-300 hover:text-green-600 cursor-pointer">{{ toggleStatus[index+1] ? "Less" : "More" }}</button>
-                        <!-- TODO: add toggle logic -->
                     </div>
                 </span>
                     <div class="flex items-center gap-2.5">
